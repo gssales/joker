@@ -1,0 +1,27 @@
+
+$font-family: 'Roboto', sans-serif;
+$code-font-family: 'JetBrains Mono', monospace;
+
+@mixin font-default {
+  font-family: $font-family;
+}
+
+@mixin paragraph {
+  @include font-default();
+
+  font-size: 14px;
+  font-weight: normal;
+}
+
+@mixin heading {
+  @include font-default();
+
+  font-size: 24px;
+  font-weight: normal;
+}
+
+@mixin code {
+  font-family: $code-font-family;
+  font-size: 14px;
+  font-weight: normal;
+}

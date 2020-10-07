@@ -1,0 +1,47 @@
+@import "../../typography.scss";
+@import "../../mixins.scss";
+@import "../../animations.scss";
+
+.joke {
+  @include heading;
+
+  margin: 8px auto;
+  display: flex;
+
+  &.setup.preload {
+    min-width: 50vw;
+    min-height: 24px;
+    background-color: white;
+    border-radius: 8px;
+    
+    animation: preload-pulse 1s normal infinite;
+  }
+
+  &.punchline {
+    min-height: 24px;
+    
+    @include transition(all, 0.5s);
+    @include transform(translate(100px, 0));
+
+    opacity: 0;
+
+    &.show {
+      @include transform(translate(0, 0));
+
+      opacity: 1;
+    }
+  }
+}
+
+.joke-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.joke-col {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
