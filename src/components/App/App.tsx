@@ -9,7 +9,7 @@ function App() {
   const [joke, setJoke] = useState<Joke|null>(null);
 
   useEffect(() => {
-    backendService.requestJoke().then(res => {
+    backendService.getRandomJoke().then(res => {
       setJoke(res);
     })
   }, [])
